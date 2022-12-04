@@ -1,0 +1,157 @@
+.revisionHistory
+	overflow auto
+	display flex
+	flex-direction column
+
+	> .heading
+		overflow visible
+		display flex
+		padding 15px
+		padding-left 19px
+		min-height 60px
+
+		border-bottom 1px dotted hsl(202, 34%, 85%)
+
+		section.dataName
+			flex 1
+			font-size 20px
+			font-weight 500
+			padding-right 2%
+
+		section.title
+			text-align right
+			font-size 20px
+			color rgb(76, 93, 103)
+
+	> .noRevisions
+		padding 20px
+
+		color #888
+		text-align center
+
+	> .revisions
+		flex 1
+		overflow auto
+		position relative
+
+		> section.revision
+			position relative
+			padding 25px 20px
+
+			border-bottom 1px solid #cadbe5
+
+			&:last-child
+				border-bottom none
+
+			.header
+				display flex
+				flex-direction row
+
+				.author
+					flex 1
+					font-weight 700
+
+					> .fa
+						color #cadbe5
+						font-size 1.2em
+						margin-right 10px
+
+				.timestamp
+					text-align right
+					font-weight 600
+					color #888
+
+					.colorKeyBubble > .bubbleContents
+						margin-left 0.5em
+						width 10px
+						height 10px
+
+			.changeLog
+				overflow-wrap break-word
+				padding-left 25px
+
+			.metricWidget
+				margin 5px
+
+			.snapshot
+				color #515151
+				padding-top 5px
+
+				> .name
+					font-size 1.2em
+					font-weight 600
+					line-height 1.5em
+					border-bottom 1px dotted sidebar-borders
+
+				> .description
+
+
+				> .metrics
+					display flex
+					flex-wrap wrap
+
+			&:hover article.entry .snapshotButton
+				opacity 0.5
+
+			article.entry
+				position relative
+				padding-top 10px
+
+				> .snapshotButton
+					float right
+					margin 5px
+					margin-right 0
+					margin-top -2px
+					opacity 0
+					transition opacity .15s ease
+					outline none
+
+					&:hover
+						opacity 1
+
+				> .fa
+					position absolute
+					left 0px
+					top 0
+					padding-top 12px
+
+					color #cadbe5
+					font-size 1.1em
+					margin-left -23px
+
+				> .metricWidget // Displayed inline with action
+					display inline-flex
+
+				.value
+					display block
+					color #515151
+
+					> .added
+						background #C0F0C0
+
+					> .removed
+						color #FF2727
+						text-decoration line-through
+						opacity 0.75
+
+				> .snapshot
+					margin 0 // Required for consistent display
+
+	// Share styling for revisions and progNote views
+	.action, .targetHeader
+		font-weight 600 !important
+		opacity 1 !important
+		padding-top 0 !important
+
+	.targetHeader
+		color #666 !important
+
+	.planSection
+		padding-bottom 10px
+		margin-bottom 0
+
+		.sectionHeader
+			display none
+
+	.target
+		padding-right 0 !important // Override overflow padding for isSelected

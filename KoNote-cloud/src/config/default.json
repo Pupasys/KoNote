@@ -1,0 +1,88 @@
+{
+	"devMode": true,
+
+	"cloudUser": "konote",
+	"clientName": "Konote",
+
+	"productName": "KoNote",
+	"supportEmailAddress": "help@konote.ca",
+
+	"logoCustomerLg": "customer-logo-lg.png",
+	"logoCustomerSm": "customer-logo-sm.png",
+	"iconNotification": "logo-notification.jpg",
+
+	"logoSubtitle": "beta",
+	"logoSubtitleColor": "hsl(205, 78%, 47%)",
+
+	"clientFileRecordId": {
+		"isEnabled": true,
+		"isRequired": false,
+		"label": "ID#"
+	},
+
+	"dataDirectory": "data",
+
+	"timestampFormat": "MMMM Do, YYYY [at] h:mma",
+
+	"timeout": {
+		"duration": 25,
+		"warnings": {
+			"initial": 10,
+			"final": 1
+		}
+	},
+
+	"clientFilePing": {
+		"acquireLock": 0.5
+	},
+
+	"terminology": {
+		"user": "user",
+		"account": "account",
+		"user account": "user account",
+
+		"client": "client",
+		"file": "file",
+		"client file": "client file",
+
+		"section": "section",
+		"plan": "plan",
+		"target": "target",
+		"plan target": "plan target",
+		"treatment plan": "treatment plan",
+
+		"progress note": "progress note",
+		"quick note": "quick note",
+
+		"metric": "metric",
+		"event": "event",
+		"global event": "global event",
+		"event type": "event type",
+		"program": "program",
+
+		"analysis": "analysis",
+		"analyze": "analyze"
+	},
+
+	"useTemplate": "simpleDemoTemplate",
+
+	"templates": {
+		"simpleDemoTemplate": {
+			"id": "simpleDemoTemplate",
+			"name": "Simple Demo Template",
+			"units": [
+				{
+					"id": "goals",
+					"type": "plan",
+					"name": "Client Goals"
+				},
+				{
+					"id": "notes",
+					"type": "basic",
+					"name": "Notes",
+					"metricIds": []
+				}
+			]
+		}
+	}
+}

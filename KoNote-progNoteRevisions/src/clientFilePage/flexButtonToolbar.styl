@@ -1,0 +1,120 @@
+.flexButtonToolbar
+	display flex
+	flex-shrink 0
+	background white
+	border-bottom 1px dotted sidebar-borders
+	height 60px
+
+	.menuItemText, .menuItemIcon
+		color rgb(76, 93, 103)
+		font-weight 200
+
+	.menuItemText, .wideMenuItemText
+		padding-left 8px
+
+	@media screen and (max-width: 1280px)
+		.menuItemText
+			display none
+		.menuItemIcon
+			font-size 1.33em
+		> button
+			flex 1 !important
+
+	> button, > .dropdown
+		z-index 3
+		background none
+		outline none
+		flex 1
+		border 0
+		border-radius 0
+		padding 0
+		transition all .1s ease
+
+		color rgb(76, 93, 103)
+
+		&:not(.collapsed):last-child
+			border-right 0 !important
+
+		&.collapsed
+			flex none !important
+			border 0 !important
+			width 0
+			padding 0
+			margin 0
+			overflow hidden
+
+		> .fa, > div > .fa, .dropdown-toggle .fa
+			margin 0px
+			transition all .1s ease
+
+		&:hover
+			&:not([disabled])
+				//transform translateY(-3px)
+				box-shadow 0px 3px 0px 0px #337ab7
+
+	// Overrides for B.Dropdown
+	> .dropdown
+		display flex
+		//flex 0.5 // TEMPORARY
+
+		> button
+			flex 1
+			border 0 !important
+			border-radius 0
+			background none
+			box-shadow none
+
+		.dropdown-menu
+			z-index 10000
+
+	// Button customizations
+	> button
+		color rgb(76, 93, 103)
+
+		&[disabled]
+			opacity 0.3
+
+		///////////////////// PlanTab
+
+		&.saveButton
+			flex 0.8
+
+			&:not([disabled])
+				box-shadow 0px 3px 0px 0px rgba(92, 184, 92, 1)
+
+			&:not([disabled]):hover
+				box-shadow 0px 3px 0px 0px darken(rgba(92, 184, 92, 1), 25%)
+
+		&.discardButton
+			flex 0.8
+
+		&.addSectionButton
+			//
+
+		&.printButton
+			flex 0.8
+
+
+		///////////////////// Info Tab
+
+
+
+
+
+
+		///////////////////// ProgNotes Tab
+
+		&.newProgNoteButton
+			$bgColor = rgba(49, 118, 170, 1)
+			color white
+			background $bgColor
+
+			&:not([disabled]):hover
+				background lighten($bgColor, 25%)
+
+			.menuItemText
+				color white
+
+		&.openFilterBarButton
+			flex 0.25 !important
+			font-size 1.3em

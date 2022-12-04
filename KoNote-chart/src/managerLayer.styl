@@ -1,0 +1,84 @@
+// Override optionsMenu when MainMenu is open
+.menuIsOpen
+	.optionsMenu
+		padding-right 0 !important
+
+.managerLayer
+	position absolute
+	width 100%
+	height 100%
+	z-index 1000
+	background white
+
+	.header
+		height 125px // For consistent table placement
+		padding 15px
+
+		h1
+			.optionsMenu
+				margin-top -5px
+				padding-right 100px
+				float right
+				text-align right
+
+				.toggleInactive
+					padding-top 20px
+					font-size 14px
+
+					label
+						font-weight normal !important
+
+					input[type='checkbox']
+						margin-left 10px
+						margin-right 10px
+
+	.closeManagerButton
+		background none
+		position absolute
+		padding 10px 15px
+		top 15px
+		right 15px
+		outline none !important
+		border none
+		font-size 22px
+		z-index 99999
+		transition all .15s ease
+
+		&:hover
+			cursor default
+			color red
+			opacity 1
+
+	> .managerLayerContainer
+		position relative
+		width 100%
+		height 100%
+		display flex
+
+		> div
+			flex 1
+			position relative
+			display flex
+			flex-direction column
+			height 100%
+			max-width 100%
+
+			h1, h2
+				font-weight 300
+				padding 0px 25px
+
+			.main
+				flex 1
+				display flex
+
+				.noData
+					display flex
+					flex 1
+					font-size 1.5em
+					justify-content center
+					align-items center
+					opacity 0.5 !important
+
+					> span
+						letter-spacing 1px
+						margin-top -15%

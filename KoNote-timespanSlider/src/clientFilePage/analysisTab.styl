@@ -1,0 +1,391 @@
+.analysisView
+	flex 1
+	display flex
+	flex-direction column
+
+	.noData
+		flex 1
+
+		display flex
+		align-items center
+		justify-content center
+		flex-direction row !important
+
+		padding 100px
+
+		color #AAA
+		font-size 24px
+		font-weight 700
+		text-align center
+
+	.mainWrapper
+		flex 1
+		display flex
+		flex-direction row
+		align-items stetch
+
+		.leftPanel
+			flex 5
+			display flex
+			flex-direction column
+			border-right 2px solid sidebar-borders
+
+			.timeScaleToolbar
+				height 75px
+				padding 0 20px 0 20px
+
+				> .timeSpanContainer
+					flex 4
+					display block
+					position relative
+					padding 5px 3% 0px 3%
+
+					> .dateDisplay
+						position absolute
+						left 0
+						right 0
+
+						display flex
+						width 100%
+						padding 20px
+
+						@require 'timeSpanToolbar'
+
+						> .timeSpanDate
+							flex first
+
+							&:2-child
+								text-align left
+
+							&:last-child
+								text-align right
+
+							> .date
+								position relative
+								transition background .25s ease
+								cursor default
+								background #fff
+								padding 6px
+
+								border-radius 5px
+
+								font-weight 400
+								color #5c5c5c
+
+								.dateIcon
+									display none
+
+								&:hover
+									background #f9f9f9
+
+									.fa
+										margin 0 2px
+
+								> input // Hidden so span below can represent the date
+									position absolute
+									bottom 0
+									left 0
+									width 2px
+									border 0
+									height 100%
+									padding 0
+									outline none
+									opacity 0
+
+								> span
+									padding 3px 5px
+
+									.fa
+										transition margin .25s ease
+										color #8CA6B5
+										margin 0
+
+								@media screen and (max-width: 1145px)
+									.dateIcon
+										display inline !important
+									.dateText
+										display none
+
+				> .granularContainer
+					flex 2
+
+			#timeSpanSlider
+				opacity 1
+				transition opacity 0.5s linear
+				display flex
+				background #eaf1f5
+				width 100%
+
+				> section
+					display inline-block
+					height 2px
+					transition width 0.2s ease
+
+					&#currentTimeSpan
+						background #b3c8d4
+
+			.chartContainer
+				flex 50
+				display flex
+				height 80%
+
+				padding 20px 5px
+
+				> .chartInner
+					flex 1
+
+					display flex
+					align-items center
+					justify-content center
+
+					> #eventInfo
+						display none
+						z-index 9999
+						position absolute
+						min-width 150px
+						max-width 500px
+						margin-right 10px
+
+						background #fff
+						border 1px solid sidebar-borders
+
+						> .title
+							font-weight 600 !important
+							background sidebar-borders
+							padding 5px
+
+							color #4c5d67
+							font-size 14px
+
+						> .info
+
+							> .description
+								font-weight normal
+								padding 5px
+								font-size 12px
+
+							> .timeSpan
+								font-size 10px
+
+								> div
+									text-align right
+									background #eee
+									padding 5px
+
+					.yearLine
+						font-weight bold
+						opacity 0.7
+
+						text
+							// Moves year value to right side of yearLine
+							transform rotate(-90deg) translateY(17px)
+
+					.chart
+						flex 1
+
+						.c3-tooltip-container
+							max-width 250px
+							overflow hidden
+
+							table
+								tr.isHovered > td
+									font-weight bold
+
+								td.definition
+									background #eee
+									max-height 50px !important
+									text-overflow ellipsis
+
+						svg
+							width 100%
+
+						.c3-zoom-rect
+							display none !important
+
+						// Hide hiddenId in legend
+						.c3-legend-item.c3-legend-item-y--h-
+							display none !important
+							width 0 !important
+
+							text, rect
+								display none !important
+								width 0 !important
+
+						.c3-regions
+
+							.c3-region
+								fill-opacity 1
+								min-width 1px !important
+
+								&:hover
+									fill-opacity 0.75 !important
+									stroke-opacity 1 !important
+
+								> rect
+									min-width 1px !important
+									fill-opacity inherit !important
+									// 10% of original height
+									transform scaleY(0.1)
+									fill sidebar-borders
+									stroke sidebar-borders
+									stroke-width 2px
+									stroke-opacity inherit
+
+									&[width="0"]
+										width 1px !important
+
+								&.singlePoint > rect
+									fill sidebar-borders
+									stroke sidebar-borders
+									stroke-width 2
+
+									&:hover
+										stroke #1d6977
+
+
+			.chartOptionsContainer
+				display flex
+				justify-content space-between
+				padding 20px 25px
+
+				> div
+					display flex
+					align-items center
+
+					label
+						margin 0
+						padding-left 10px
+						padding-right 2px
+
+				button
+					border none
+					color #4c5d67
+
+
+		.selectionPanel
+			flex 2
+			display flex
+			flex-direction column
+			overflow-y auto
+			overflow-x hidden
+
+			.dataType
+				clear both
+
+				h2
+					cursor default
+					font-size 24px
+					font-weight 300
+					margin 0
+					padding 15px
+					border-bottom 1px solid sidebar-borders
+					transition all .15s ease
+
+					&.noEventPoints, &.noMetricPoints
+						opacity 0.65
+						font-size 14px
+						font-weight 400
+						border-bottom 0
+						padding 20px 15px
+						text-align center
+
+					&.noEventPoints
+						padding-top 27px
+
+					&.noMetricPoints
+						border-top 1px solid sidebar-borders
+
+					input[type=checkbox]
+						height 18px
+						margin 0
+						margin-right 10px
+
+					.helper
+						opacity 0
+						font-size 10px
+						line-height 24px
+						float right
+
+					&:not(.noEventPoints):not(.noMetricPoints):hover
+						cursor default
+						color white
+						background sidebar-borders
+						color #456E86
+
+						.helper
+							opacity 1
+
+
+				h3
+					font-size 13px
+					letter-spacing 1px
+					font-weight 700
+					margin 0
+					padding 10px
+					text-transform uppercase
+					color grey
+
+				.checkbox
+					margin 0
+					padding-bottom 5px
+
+					label
+						width 100%
+
+					.colorKeyCount
+						float right
+						display flex
+						align-items center
+						justify-content center
+						background #d2d2d2
+						min-width 18px
+						height 18px
+						padding 0 2px
+						text-align center
+						font-size 10px
+						font-weight 700
+						color white
+						text-shadow 0 1px 1px rgba(0,0,0,0.3)
+
+						&.circle
+							border-radius 10px
+							width 20px
+							height 20px
+
+					.fa-star // Same as from newProgNotePage
+						opacity 0
+						transition opacity .15s ease
+						color #888
+						float right
+						border none
+						margin-top 3px
+						margin-right 5px
+
+						&:hover
+							color #337ab7
+
+					&:hover .fa-star
+						opacity 1
+
+					&.isHighlighted .fa-star
+						opacity 1
+						color yellow
+						-webkit-text-stroke 1px #888
+
+				.dataOptions
+					padding 0px 15px 15px 25px
+
+					label
+						color #5c5c5c
+
+				&.metrics
+					h4
+						padding 0
+						margin 0
+						font-size 14px
+						font-weight 600
+
+					section
+						padding-left 15px
+						margin-bottom 15px
+						border-left 1px solid #eee

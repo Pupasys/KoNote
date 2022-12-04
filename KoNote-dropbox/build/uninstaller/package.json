@@ -1,0 +1,16 @@
+{
+	"main": "index.html",
+	"name": "uninstall",
+	"displayName": "uninstall",
+	"version": "1.0.0",
+	"description": "Cleanup utility to remove konote data directory on Windows",
+	"license": "MPL-2.0",
+	"build": {
+		"nwVersion": "0.30.5",
+		"outputPattern": "${NAME}-${PLATFORM}-${ARCH}",
+		"packed": true
+	},
+	"dependencies": {
+	"rimraf": "^2.5.4"
+	}
+}

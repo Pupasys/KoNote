@@ -1,0 +1,139 @@
+{
+	"devMode": true,
+	"backend": {
+		"type": "file-system",
+		"dataDirectory": "data"
+	},
+
+	"productName": "KoNote",
+	"supportEmailAddress": "help@konote.ca",
+
+	"logoCustomerLg": "customer-logo-lg.png",
+	"logoCustomerSm": "customer-logo-sm.png",
+	"iconNotification": "src/logo-notification.jpg",
+
+	"logoSubtitle": "beta",
+	"logoSubtitleColor": "hsl(205, 78%, 47%)",
+
+	"features": {
+		"shiftSummaries": {
+			"isEnabled": false
+		},
+		"clientAvatar": {
+			"isEnabled": false
+		}
+	},
+
+	"clientFileRecordId": {
+		"isEnabled": true,
+		"isRequired": false,
+		"label": "ID#"
+	},
+
+	"printHeaderFooterEnabled": false,
+	"printHeader": "",
+	"printFooter": "",
+
+	"timestampFormat": "MMM Do, YYYY [-] h:mma",
+	"dateFormat": "MMM Do, YYYY",
+	"numericalDateFormat": "DD/MM/YY",
+	"timeFormat": "h:mma",
+
+	"timeout": {
+		"duration": 25,
+		"warnings": {
+			"final": 1
+		}
+	},
+
+	"clientFilePing": {
+		"acquireLock": 0.5
+	},
+
+	"terminology": {
+		"user": "user",
+		"account": "account",
+		"user account": "user account",
+
+		"client": "client",
+		"file": "file",
+		"client file": "client file",
+
+		"section": "section",
+		"plan": "plan",
+		"target": "target",
+		"plan target": "plan target",
+		"treatment plan": "treatment plan",
+
+		"template": "template",
+		"plan template": "plan template",
+
+		"progress note": "progress note",
+		"quick note": "quick note",
+
+		"metric": "metric",
+		"metric definition": "metric definition",
+		"event": "event",
+		"global event": "global event",
+		"event type": "event type",
+		"program": "program",
+
+		"analysis": "analysis",
+		"analyze": "analyze"
+	},
+
+	"useTemplate": "simpleDemoTemplate",
+
+	"templates": {
+		"simpleDemoTemplate": {
+			"id": "simpleDemoTemplate",
+			"name": "Simple Demo Template",
+			"units": [
+				{
+					"id": "goals",
+					"type": "plan",
+					"name": "Client Goals"
+				},
+				{
+					"id": "notes",
+					"type": "basic",
+					"name": "Notes",
+					"metricIds": []
+				}
+			]
+		}
+	},
+
+	"clientDetailDefinitionGroups": [
+		{
+			"title": "Basic Information",
+			"fields": [
+				{
+					"name": "Primary Phone",
+					"inputType": "input",
+					"placeholder": "Primary Phone"
+				},
+				{
+					"name": "Other Phone",
+					"inputType": "input",
+					"placeholder": "Other Phone"
+				},
+				{
+					"name": "Email",
+					"inputType": "input",
+					"placeholder": "Email"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				},
+				{
+					"name": "Comments",
+					"inputType": "textarea",
+					"placeholder": "Additional Comments"
+				}
+			]
+		}
+	]
+}

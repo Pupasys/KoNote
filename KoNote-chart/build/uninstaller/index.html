@@ -1,0 +1,12 @@
+<script>
+var rimraf = require('rimraf');
+var path = require('path');
+
+var nwDir = path.dirname(process.execPath);
+var dataDir = path.join(nwDir, 'data');
+
+rimraf(dataDir, function(err) {
+  nw.App.quit();
+});
+
+</script>

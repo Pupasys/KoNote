@@ -1,0 +1,87 @@
+<!--
+Copyright (c) Konode. All rights reserved.
+This source code is subject to the terms of the Mozilla Public License, v. 2.0
+that can be found in the LICENSE file or at: http://mozilla.org/MPL/2.0
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>KoNote</title>
+
+		<style>
+			@media print {
+				@page { margin: 0; }
+			}
+
+			html, body, #container, #preloader {
+				height: 100%;
+			}
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+				font-weight: 200;
+				margin: 0;
+			}
+			#preloader {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				animation-name: showEffect;
+				animation-iteration-count: 1;
+				animation-timing-function: ease-in;
+				animation-duration: 2s;
+			}
+			.lds-dual-ring {
+				width: 64px;
+				height: 64px;
+				margin: 8px;
+				border-radius: 50%;
+				border: 2px solid;
+				border-color: #559fdf transparent #559fdf transparent;
+				animation: lds-dual-ring 1.2s linear infinite;
+			}
+			@keyframes lds-dual-ring {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes showEffect {
+				0% {
+					opacity: 0;
+				}
+				25% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+		</style>
+		<style id="main-css">/* see start.js */</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="preloader">
+				<div class="lds-dual-ring"></div>
+			</div>
+			<!-- JavaScript will inject content here. -->
+		</div>
+		<script>nw.Window.get().show();</script>
+		<script src="../lib/jquery/dist/jquery.min.js"></script>
+		<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../lib/bootbox/bootbox.min.js"></script>
+		<script src="../lib/typeahead.js/dist/typeahead.jquery.min.js"></script>
+		<script src="../lib/react/dist/react-with-addons.js"></script>
+		<script src="../lib/react-dom/dist/react-dom.js"></script>
+		<script src="../lib/react-dom/dist/react-dom-server.js"></script>
+		<script src="../lib/react-bootstrap/dist/react-bootstrap.min.js"></script>
+		<script src="../lib/react-bootstrap-table/react-bootstrap-table.min.js"></script>
+		<script src="bootbox-noxss.js"></script>
+		<script src="start.js"></script>
+	</body>
+</html>

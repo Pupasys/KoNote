@@ -1,0 +1,180 @@
+{
+	"devMode": true,
+	"backend": {
+		"type": "file-system",
+		"dataDirectory": "data"
+	},
+
+	"productName": "KoNote",
+	"supportEmailAddress": "help@konote.ca",
+
+	"logoCustomerLg": "customer-logo-lg.png",
+	"logoCustomerSm": "customer-logo-sm.png",
+	"iconNotification": "logo-notification.jpg",
+
+	"logoSubtitle": "beta",
+	"logoSubtitleColor": "hsl(205, 78%, 47%)",
+
+	"features": {
+		"shiftSummaries": {
+			"isEnabled": false
+		}
+	},
+
+	"clientFileRecordId": {
+		"isEnabled": true,
+		"isRequired": false,
+		"label": "ID#"
+	},
+
+	"timestampFormat": "MMMM Do, YYYY [at] h:mma",
+
+	"timeout": {
+		"duration": 25,
+		"warnings": {
+			"initial": 10,
+			"final": 1
+		}
+	},
+
+	"clientFilePing": {
+		"acquireLock": 0.5
+	},
+
+	"terminology": {
+		"user": "user",
+		"account": "account",
+		"user account": "user account",
+
+		"client": "client",
+		"file": "file",
+		"client file": "client file",
+
+		"section": "section",
+		"plan": "plan",
+		"target": "target",
+		"plan target": "plan target",
+		"treatment plan": "treatment plan",
+
+		"template": "template",
+		"plan template": "plan template",
+
+		"progress note": "progress note",
+		"quick note": "quick note",
+
+		"metric": "metric",
+		"metric definition": "metric definition",
+		"event": "event",
+		"global event": "global event",
+		"event type": "event type",
+		"program": "program",
+
+		"analysis": "analysis",
+		"analyze": "analyze"
+	},
+
+	"useTemplate": "simpleDemoTemplate",
+
+	"templates": {
+		"simpleDemoTemplate": {
+			"id": "simpleDemoTemplate",
+			"name": "Simple Demo Template",
+			"units": [
+				{
+					"id": "goals",
+					"type": "plan",
+					"name": "Client Goals"
+				},
+				{
+					"id": "notes",
+					"type": "basic",
+					"name": "Notes",
+					"metricIds": []
+				}
+			]
+		}
+	},
+
+	"clientDetailDefinitionGroups": [
+		{
+			"title": "Basic Information",
+			"fields": [
+				{
+					"name": "Email Address",
+					"inputType": "input",
+					"placeholder": "Email"
+				},
+				{
+					"name": "Home Phone",
+					"inputType": "input",
+					"placeholder": "Home Phone"
+				},
+				{
+					"name": "Mobile Phone",
+					"inputType": "input",
+					"placeholder": "Mobile Phone"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				},
+				{
+					"name": "Additional Comments",
+					"inputType": "textarea",
+					"placeholder": "Additional Comments"
+				}
+			]
+		},
+		{
+			"title": "Parent/ Guardian 1",
+			"fields": [
+				{
+					"name": "First Name",
+					"inputType": "input",
+					"placeholder": "First Name"
+				},
+				{
+					"name": "Last Name",
+					"inputType": "input",
+					"placeholder": "Last Name"
+				},
+				{
+					"name": "Phone Number",
+					"inputType": "input",
+					"placeholder": "Phone Number"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				}
+			]
+		},
+		{
+			"title": "Parent/ Guardian 2",
+			"fields": [
+				{
+					"name": "First Name",
+					"inputType": "input",
+					"placeholder": "First Name"
+				},
+				{
+					"name": "Last Name",
+					"inputType": "input",
+					"placeholder": "Last Name"
+				},
+				{
+					"name": "Phone Number",
+					"inputType": "input",
+					"placeholder": "Phone Number"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				}
+			]
+		}
+	]
+}

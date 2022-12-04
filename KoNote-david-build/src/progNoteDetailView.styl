@@ -1,0 +1,114 @@
+.progNoteDetailView
+	display flex
+	flex-direction column
+	overflow auto
+
+
+	> .noSelection
+		flex 1
+		padding 200px 50px
+
+		color #888
+		text-align center
+
+	> .itemDetails
+		cursor default
+		border-bottom 1px solid hsl(202, 34%, 85%)
+
+		.itemName
+			height 59px
+			padding 0 15px
+			display flex
+			align-items center
+
+			.toggleDescriptionButton
+				cursor default
+				float right
+				opacity 0.5
+				transition all .15s ease
+
+				text-align right
+				color #666
+
+				&:hover
+					//text-decoration underline
+
+				.up
+					transition all 0.5s ease
+					transform rotate(0deg)
+
+				.down
+					transition all 0.5s ease
+					transform rotate(180deg)
+
+			&:hover .toggleDescriptionButton
+				opacity 1
+
+			h3
+				flex 1
+				margin 0
+				font-size 20px
+				font-weight 500
+
+		.itemDescription
+			padding 15px
+			padding-top 0
+			max-height 130px
+			overflow auto
+			color grey
+
+	> .history
+		flex 1
+
+		overflow auto
+
+		> .entry
+			padding 25px 20px
+			border-bottom 1px solid #cadbe5
+
+			&.highlighted
+				background #FFFFDD
+
+			&.isHovered
+				background #FFFFC2
+				border-bottom-color #BDA045
+
+			.notes
+				overflow-wrap break-word
+
+				.starred
+					font-weight 600
+					background-color yellow
+
+			> .metrics
+				display flex
+				flex-wrap wrap
+
+				margin -5px
+
+				padding-top 5px
+
+				> .metricWidget
+					margin 5px
+
+			> .header
+				padding-bottom 10px
+
+				> .author
+					font-weight 700
+
+					> .fa
+						color #cadbe5
+						font-size 1.2em
+						margin-right 10px
+
+				> .timestamp
+					float right
+
+					color #888
+					font-weight 700
+
+					.colorKeyBubble > .bubbleContents
+						margin-left 0.5em
+						width 10px
+						height 10px

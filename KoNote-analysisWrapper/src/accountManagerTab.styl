@@ -1,0 +1,78 @@
+.accountManagerTab
+	// Nothing here yet...
+
+// TODO: Extract to component
+#modifyAccountDialog
+	min-width 475px
+	display flex
+	padding 5px
+
+	section
+		flex 1
+
+		&#accountDetails
+			text-align center
+			color darken(#B1B1B1, 50%)
+
+			h3
+				font-size 20px
+				text-align center
+				font-weight 300
+
+			#userProgram > span
+				border-bottom 2px solid transparent
+
+		&#accountActions
+
+			#actionsList
+				text-align right
+
+				h4
+					margin-top 0
+
+				ul
+					list-style none
+					padding 0
+					margin 0
+
+					li
+						transition border-right-color .25s ease
+						border-right 2px solid #fff
+						padding 2px 0
+
+						&:hover
+							border-right-color #337ab7
+
+						button
+							outline none
+							transition all .15s ease
+							text-decoration none
+
+							&:hover
+								// padding-right 1em
+.resetDisplayNameDialog
+	.buttonToolbar
+		display flex
+		float right
+
+		.btn
+			margin-left 1em
+// TODO: Extract this to component
+.resetPasswordDialog
+
+	.buttonToolbar
+		margin-top 1em
+		display flex
+
+		> div
+			display flex
+			align-items center
+			justify-content center
+
+			padding-left 1em
+
+			&:first-child
+				padding-left 0
+
+			&:last-child
+				flex-grow 1

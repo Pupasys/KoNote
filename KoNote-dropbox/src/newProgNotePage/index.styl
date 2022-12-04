@@ -1,0 +1,323 @@
+.newProgNotePage
+	background white
+	display flex
+	height 100%
+
+	.backdateMessage
+		text-align center
+		color red
+		padding 15px
+		padding-bottom 0px
+
+	> .loadError
+		width 100%
+		padding 200px
+
+		text-align center
+
+		> div
+			> .btn
+				margin 50px
+
+	.backdateContainer
+		padding 12px
+		//display flex
+		justify-content center
+
+		.input-group
+			width 100%
+
+		.backdate
+			border-color white
+			width 100%
+
+	// Main ProgNote Area
+
+	> .progNote
+		flex 1
+		display flex
+		flex-direction column
+		position relative
+		overflow-x hidden
+		overflow-y auto
+
+		// Regular ProgNote Styles
+
+		h1
+			text-align center
+			font-size 26px
+			font-weight 300
+			text-transform uppercase
+			border-bottom 1px solid lightgray
+			border-top 1px solid lightgray
+			padding 12px
+
+		h2
+			font-size 20px
+			font-weight 500
+			text-transform uppercase
+			//border-bottom 1px solid lightgray
+			//border-top 1px solid lightgray
+			padding 20px 12px 2px 12px
+			margin 0
+
+		h3
+			margin-top 2px
+			font-size 12px
+			color #4c5d67
+			text-transform uppercase
+
+		textarea
+			border 1px solid rgba(255,255,255,0)
+			box-shadow inset 0 1px 1px rgba(255,255,255,0)
+			padding 0px 0px 10px 0px
+			&:focus::-webkit-input-placeholder
+				color transparent
+
+		.unitContainer
+			flex 1
+			display flex
+			flex-direction column
+
+		.units
+			padding-bottom 20px
+			overflow-x hidden
+			overflow-y scroll
+
+			.unit
+				padding-bottom 15px
+
+				&.basic
+
+					textarea
+						padding 10px
+
+					.star
+						color #888
+						float right
+						border none
+						opacity 0
+						font-size 12px
+						font-weight 300
+						cursor default
+						transition all .3s
+						text-transform none
+						white-space nowrap
+						padding 12px 0 2 6px
+
+						&:hover
+							color red
+
+						&.checked
+							opacity 1
+							.fa
+								opacity 1
+								color red
+							.flagText
+								opacity 0
+
+					&:hover .star
+						opacity 1
+
+					> .metrics
+						display flex
+						flex-wrap wrap
+
+						margin -3px
+
+						padding-top 5px
+
+						> .metricWidget
+							margin 3px
+
+							.name
+								font-weight 500
+
+				&.plan
+
+					> .empty
+						text-align center
+						padding 15px
+						color #888
+
+					> section
+
+						> .target
+							padding 12px
+							border-bottom 1px solid lightgray
+
+							&:first-child
+								padding-top 2px
+
+							&:last-child
+								//border-bottom none
+
+							.targetHeader
+								display flex
+								justify-content space-between
+
+							.star
+								color #888
+								float right
+								border none
+								opacity 0
+								font-weight 300
+								cursor default
+								transition all .3s
+								text-transform none
+								white-space nowrap
+								padding-left 6px
+
+								&:hover
+									color red
+
+								&.checked
+									opacity 1
+									.fa
+										opacity 1
+										color red
+									.flagText
+										opacity 0
+
+							> .name
+								margin 10px 0 5px
+
+								color #666
+								font-size 16px
+								font-weight 600
+
+							> .metrics
+								display flex
+								flex-wrap wrap
+
+								margin -3px
+
+								padding-top 5px
+
+								> .metricWidget
+									margin 3px
+
+									.name
+										font-weight 500
+
+							&:hover .star
+								opacity 1
+
+
+		#shiftSummaryField
+			margin-top 25px
+
+	> .progNoteDetailView
+		flex 1
+		border-left 2px solid rgb(204, 220, 230)
+
+
+	> .eventsPanel
+		flex-basis 70px
+		text-align center
+		padding-top 12px
+		border-left 2px solid #eee
+
+		> .title
+			font-weight bold
+			text-transform uppercase
+			text-align center
+			padding 10px 0px
+			color #7C7C7C
+			border-bottom 1px solid #eee
+			margin-bottom 10px
+
+		> .eventsList
+			clear both
+			display block
+			max-height 100%
+
+			&.editMode .icon
+				opacity 0.35
+
+			> .addEventButton
+				border none
+				margin-top 15px
+				color green
+
+			> .eventTab
+				position relative
+				background white
+
+				display flex
+				align-items center
+				justify-content center
+
+				> .icon
+					width 50px
+					height 50px
+
+					display flex
+					align-items center
+					justify-content center
+
+					> img
+						width 60%
+						height auto
+
+				&.isEditing .icon
+					background white
+					color black
+
+				&:hover, &.isEditing
+
+					> .eventView
+						display block
+
+				&:hover > .eventView
+					z-index 1000
+
+	.newProgNoteToolbar
+		display flex
+		background white
+		border-top 1px dotted lightgray
+		height 60px
+		position sticky
+		bottom 0
+		color rgb(76, 93, 103)
+		font-weight 300
+
+		@media screen and (max-width: 700px)
+			.menuItemText
+				display none
+			.menuItemIcon
+				font-size 1.33em
+
+		.menuItemText, .wideMenuItemText
+			padding-left 8px
+
+		> button
+			z-index 3
+			background none
+			outline none
+			flex 1
+			border 0
+			border-radius 0
+			padding 0
+			transition all .1s ease
+
+			> .fa, > div > .fa, .dropdown-toggle .fa
+				margin 0px
+				transition all .1s ease
+
+			&:hover
+				&:not([disabled])
+					box-shadow inset 0px 3px 0px 0px #337ab7
+
+			&:active
+				&:not([disabled])
+					//transform translateY(2px)
+
+			&[disabled]
+				opacity 0.3
+
+			&.saveButton
+				&:not([disabled])
+					font-weight bold
+					&:hover
+						box-shadow inset 0px 3px 0px 0px darken(rgba(92, 184, 92, 1), 25%)

@@ -1,0 +1,277 @@
+{
+	"backend": {
+		"dataDirectory": "P:\\KoNode\\data"
+	},
+
+	"logoCustomerLg": "gc-logo.svg",
+	"logoCustomerSm": "gc-logo.svg",
+	"logoSubtitle": "",
+
+	"features": {
+		"shiftSummaries": {
+			"isEnabled": true
+		}
+	},
+
+	"clientFileRecordId": {
+		"isEnabled": true,
+		"isRequired": true,
+		"label": "CR#"
+	},
+
+	"terminology": {
+		"metric": "indicator"
+	},
+
+	"printHeaderFooterEnabled": true,
+	"printHeader": "",
+	"printFooter": "CONFIDENTIAL - NOT TO BE DISCLOSED WITHOUT THE INFORMED CONSENT OF THE CLIENT OR AS REQUIRED BY LAW",
+
+	"useTemplate": "clientLog",
+
+	"templates": {
+		"initialAssessment": {
+			"id": "initAssessGC",
+			"name": "Client Log - Initial Assessment",
+			"units": [
+				{
+					"id": "peerInt",
+					"type": "basic",
+					"name": "Peer Interactions",
+					"metricIds": []
+				},
+				{
+					"id": "staffInt",
+					"type": "basic",
+					"name": "Staff Interactions",
+					"metricIds": []
+				},
+				{
+					"id": "partProgramming",
+					"type": "basic",
+					"name": "Participation in Programming",
+					"metricIds": []
+				},
+				{
+					"id": "partAcademics",
+					"type": "basic",
+					"name": "Participation in Academics",
+					"metricIds": []
+				},
+				{
+					"id": "descGenPres",
+					"type": "basic",
+					"name": "Description of General Presentation",
+					"metricIds": []
+				},
+				{
+					"id": "descCoping",
+					"type": "basic",
+					"name": "Description of Coping Skills Exhibited",
+					"metricIds": []
+				},
+				{
+					"id": "staffFamily",
+					"type": "basic",
+					"name": "Staff Contact with Family",
+					"metricIds": []
+				},
+				{
+					"id": "additional",
+					"type": "basic",
+					"name": "Additional Comments Related to Domains / General Comments (including incidents, etc)",
+					"metricIds": []
+				},
+				{
+					"id": "checkin",
+					"type": "basic",
+					"name": "Feedback from Client Check-In",
+					"metricIds": []
+				},
+				{
+					"id": "sr",
+					"type": "basic",
+					"name": "School Readiness",
+					"metricIds": [
+						"sr1",
+						"sr2",
+						"sr3",
+						"sr4"
+					]
+				},
+				{
+					"id": "ss",
+					"type": "basic",
+					"name": "Social Skills",
+					"metricIds": [
+						"ss1",
+						"ss2",
+						"ss3",
+						"ss4"
+					]
+				},
+				{
+					"id": "life",
+					"type": "basic",
+					"name": "Life Skills",
+					"metricIds": [
+						"life1",
+						"life2"
+					]
+				},
+				{
+					"id": "leisure",
+					"type": "basic",
+					"name": "Leisure Skills",
+					"metricIds": [
+						"leisure1",
+						"leisure2"
+					]
+				}
+			]
+		},
+		"clientLog": {
+			"id": "clientLogGC",
+			"name": "Client Log",
+			"units": [
+				{
+					"id": "goals",
+					"type": "plan",
+					"name": "Client Goals"
+				},
+				{
+					"id": "peerInt",
+					"type": "basic",
+					"name": "Peer Interactions",
+					"metricIds": []
+				},
+				{
+					"id": "staffInt",
+					"type": "basic",
+					"name": "Staff Interactions",
+					"metricIds": []
+				},
+				{
+					"id": "partProgramming",
+					"type": "basic",
+					"name": "Participation in Programming",
+					"metricIds": []
+				},
+				{
+					"id": "partAcademics",
+					"type": "basic",
+					"name": "Participation in Academics",
+					"metricIds": []
+				},
+				{
+					"id": "descGenPres",
+					"type": "basic",
+					"name": "Description of General Presentation",
+					"metricIds": []
+				},
+				{
+					"id": "descCoping",
+					"type": "basic",
+					"name": "Description of Coping Skills Exhibited",
+					"metricIds": []
+				},
+				{
+					"id": "staffFamily",
+					"type": "basic",
+					"name": "Staff Contact with Family",
+					"metricIds": []
+				},
+				{
+					"id": "additional",
+					"type": "basic",
+					"name": "Additional Comments",
+					"metricIds": []
+				},
+				{
+					"id": "checkin",
+					"type": "basic",
+					"name": "Feedback from Client Check-In",
+					"metricIds": []
+				}
+			]
+		}
+	},
+
+		"clientDetailDefinitionGroups": [
+		{
+			"title": "Parent / Guardian 1",
+			"fields": [
+				{
+					"name": "Name",
+					"inputType": "input",
+					"placeholder": "Home Phone"
+				},
+				{
+					"name": "Phone",
+					"inputType": "input",
+					"placeholder": "Mobile Phone"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				},
+				{
+					"name": "Comments",
+					"inputType": "textarea",
+					"placeholder": "Additional Comments"
+				}
+			]
+		},
+		{
+			"title": "Parent / Guardian 2",
+			"fields": [
+				{
+					"name": "Name",
+					"inputType": "input",
+					"placeholder": "Home Phone"
+				},
+				{
+					"name": "Phone",
+					"inputType": "input",
+					"placeholder": "Mobile Phone"
+				},
+				{
+					"name": "Address",
+					"inputType": "textarea",
+					"placeholder": "Address"
+				},
+				{
+					"name": "Comments",
+					"inputType": "textarea",
+					"placeholder": "Additional Comments"
+				}
+			]
+		},
+		{
+			"title": "Outside Care Providers",
+			"fields": [
+				{
+					"name": "Provider 1",
+					"inputType": "textarea",
+					"placeholder": "Care Provider Details"
+				},
+				{
+					"name": "Provider 2",
+					"inputType": "textarea",
+					"placeholder": "Care Provider Details"
+				},
+				{
+					"name": "Provider 3",
+					"inputType": "textarea",
+					"placeholder": "Care Provider Details"
+				},
+				{
+					"name": "Comments",
+					"inputType": "textarea",
+					"placeholder": "Additional Comments"
+				}
+			]
+		}
+	]
+}

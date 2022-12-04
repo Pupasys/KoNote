@@ -1,0 +1,226 @@
+.filterBar
+	display flex
+	position relative
+	background #eaf1f5
+	color rgb(76, 93, 103)
+	min-height 50px
+	padding 0px 3%
+	width 100%
+
+	> section
+		display flex
+
+		&#searchFilter
+			flex 2
+			flex-grow 3
+			min-width 150px
+
+		&#otherFilters
+			flex 3
+			flex-grow 5.5
+			display flex
+			font-size 0.95em
+
+			> article
+				flex 2
+
+				&#dropdown-data
+					min-width 90px
+
+				&#dropdown-programs
+					min-width 110px
+
+				&.hasSelection // Dates has bigger flex when has value
+
+					&#dropdown-dates
+						flex-grow 3
+
+		&#filterCloseButton
+			flex-basis 28px
+			display flex
+			position relative
+			justify-content center
+			align-items center
+
+			.fa
+				font-size 1.5em
+				transition opacity .2s ease
+				padding 5px
+
+				&:hover
+					opacity 0.75
+
+		input
+			font-size 1em
+			border none
+			box-shadow none
+			background none
+			padding 10px 2%
+			height 100%
+
+
+
+	.filterDropdownMenu
+		position relative
+		z-index 1058 // Under quickNote popover
+
+		> div
+			flex 1
+			display flex
+			align-items center
+			justify-content center
+
+			font-weight 500 !important
+			cursor default
+
+			&:hover
+				opacity 1
+
+			#dateSpanTitle
+				white-space nowrap
+
+		.option
+			cursor default !important
+			white-space nowrap
+			display flex
+			align-items center
+
+			> .value
+				// Limit width with ...
+				max-width 115px
+				overflow hidden
+				white-space nowrap
+				text-overflow ellipsis
+
+			> .fa
+				padding-left 5px
+
+		.selectedValue
+			flex 1
+			font-weight 600
+			padding 10px 6%
+			height 100%
+
+			&:hover .value
+				opacity 100%
+
+			> span.innerSelected // Date range
+				display flex
+				align-items center
+				justify-content center
+				font-size 0.97em
+
+		.colorKeyBubble
+			margin-right 5px
+			text-align center
+
+			.fa
+				color #eaf1f5
+				font-size 10px
+
+		ul.filterOptions
+			margin 0
+			padding 0
+			list-style none
+			position absolute
+			top 100%
+			width 100% !important
+			left 0
+			display none
+			transition opacity .25s ease
+			min-width 100px
+			z-index 1259
+
+			> li
+				font-weight 400
+				font-size 0.95em
+				background #eaf1f5
+				border-bottom 1px solid #cadbe5
+				padding 7px 7px
+				width 100%
+				cursor default
+
+				&:hover
+					background #cadbe5
+
+				&:last-child
+					border-bottom none
+
+				&.selectAllOption
+					font-weight 600
+					// border-bottom-style dashed
+
+				&.dateSpanSelection
+					display flex
+					position relative
+
+					section
+						flex 1 1 auto
+						display flex
+						align-items center
+
+						&:first-child // From/To
+							font-weight bold
+							font-size 0.9em
+
+						&:last-child
+							justify-content flex-end
+
+						&.dateSpanPicker
+							.bootstrap-datetimepicker-widget // Fix positioning
+								margin-right -20px !important
+								margin-top 0px !important
+
+							// Disable decade selection
+							.datepicker-years thead .picker-switch
+								cursor default
+								pointer-events none
+
+							// Custom styles for months/days/year whether enabled/disabled
+							.month, .day, .year
+								border-radius 0
+
+								&.disabled
+									color #b5b5b5
+									background rgb(232, 232, 232)
+
+								&:not(.disabled):hover
+									background #337ab7
+									color white
+
+						.fa
+							margin-left 5px
+							opacity 0.75
+
+
+		&.isOpen
+			ul.filterOptions
+				display block
+
+
+	@media screen and (max-width: 1350px)
+		font-size 0.9em
+
+	// 2-row display
+	@media screen and (max-width: 1200px)
+		flex-direction column
+
+		> section
+
+			&:not(#searchFilter)
+				font-size 0.9em
+
+			// Take out of flex, move to top-right
+			&#filterCloseButton
+				position absolute !important
+				top 5px
+				right 5px
+
+			// Remove min-width to allow for finer flexing
+			&#otherFilters > article
+				min-width 0 !important
+
+		// Make extra space for the close button
+		input
+			padding 0px inherit !important
+			padding-right 30px !important

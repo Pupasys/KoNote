@@ -1,0 +1,75 @@
+.metricWidget
+	display flex
+	align-items center
+	cursor default
+
+	max-width 100%
+	height 30px
+
+	background hsl(202, 95%, 75%)
+
+	border-radius 3px
+
+	color white
+	
+	&.clear
+		background none
+		height 15px
+		color #666
+		margin 0 !important
+		
+		> .name
+			color #666
+			padding 0 inherit
+
+	> .icon
+		flex-shrink 0
+
+		margin-right -4px
+
+		width 30px
+		height 30px
+
+		font-size 14px
+		font-weight 700
+		line-height 30px
+		text-align center
+
+	> .value
+		margin 4px
+
+		width 35px
+		height 22px
+
+		border none
+		border-radius 3px
+		outline none
+
+		background hsl(202, 95%, 94%)
+		color hsl(202, 25%, 25%)
+		font-size 16px
+		font-weight 400
+		text-align center
+
+	> .name
+		overflow hidden
+		white-space nowrap
+		text-overflow ellipsis
+
+		padding 0 9px 0 3px
+
+		color white
+		font-weight 700
+		line-height 30px
+
+	> .delete
+		flex-shrink 0
+
+		margin-left -3px
+
+		padding-right 7px
+
+		cursor default
+
+	.tooltipContent
+		text-align left

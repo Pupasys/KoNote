@@ -1,0 +1,14 @@
+*.swo
+*.swp
+*.csv
+*.zip
+
+.brackets.json
+.vscode*
+.DS_Store
+
+/data*
+/node_modules/
+/build/releases/
+
+npm-debug.log

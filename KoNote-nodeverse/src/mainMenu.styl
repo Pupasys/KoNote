@@ -1,0 +1,89 @@
+#mainMenu
+	width 20%
+	max-width 225px
+	display flex
+	flex-direction column
+	justify-content center
+	overflow hidden
+	color hsl(hue(sidebar-bg), 15%, 35%)
+	background hsl(hue(logo-light-blue), 35%, 94%)
+	border-left 2px solid sidebar-borders
+	z-index 1000
+
+	transition all 1s ease
+
+	#menuContainer
+		flex 1
+		display flex
+		flex-direction column
+		min-height 650px
+		overflow-y auto
+
+		> #user
+			height 30%
+			max-height 300px
+
+			text-align center
+			padding-top 75px
+
+			#avatar
+				flex 1
+				display flex
+
+				> .fa
+					font-size 5em
+					width 1.5em
+					height 1.5em
+					margin 0px auto
+					display inline-block
+					text-align center
+					color hsl(hue(logo-light-blue), 35%, 94%)
+					background white
+					border-radius 50%
+					border 2px dashed hsl(hue(logo-light-blue), 35%, 94%)
+					padding 15px
+
+			h3
+				font-size 20px
+				text-align center
+				font-weight 300
+
+			.currentProgram
+				color hsl(hue(sidebar-bg), 15%, 35%)
+
+		> #items
+			padding-bottom 50px
+
+			> ul
+				overflow hidden
+				width 100%
+				margin 0px
+				padding 0
+				list-style none
+
+				> li
+					line-height 2em
+
+					&.active, &:hover
+						background darken(sidebar-bg, 5%)
+
+					> div
+						display block
+						padding 15px 20px
+
+						cursor default
+						font-weight 600
+
+						@media screen and (max-width: 745px)
+							text-align center
+							font-size x-large
+							
+							.menuItemText
+								display none
+
+						> .fa
+							padding-right 10px
+							transition padding-right .25s ease
+
+							@media screen and (max-width: 745px)
+								padding-right 0px
